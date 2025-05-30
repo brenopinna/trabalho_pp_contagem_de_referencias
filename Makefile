@@ -2,7 +2,7 @@ CFLAGS = -Icontref/include
 
 LDLIBS = -Lcontref/bin -lcontref
 
-.PHONY: lib                                      # vai executar sempre que eu quiser a diretiva make lib, sem dependencias
+.PHONY: lib                                                          # vai executar sempre que eu quiser a diretiva make lib, sem dependencias
 
 #* build do projeto com a lib ja compilada
 main:
@@ -15,7 +15,7 @@ main:
 lib:
 	mkdir -p contref/bin                                               # cria o diretorio contref/bin, caso nao exista
 	gcc -c $(CFLAGS) contref/src/contref.c -o contref/bin/contref.o    # compila o obj da contref na pasta contref/bin
-	ar rvs contref/bin/libcontref.a contref/bin/contref.o                      # vai gerar o arquivo da biblioteca na pasta contref/bin
+	ar rvs contref/bin/libcontref.a contref/bin/contref.o              # vai gerar o arquivo da biblioteca na pasta contref/bin
 	rm contref/bin/contref.o                                           # remove o arquivo objeto intermediario
 
 # Peguei do link: https://wiki.inf.ufpr.br/maziero/doku.php?id=c:construcao_de_bibliotecas
